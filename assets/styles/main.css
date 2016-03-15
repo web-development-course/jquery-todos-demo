@@ -1,0 +1,11 @@
+.todos-item-trash {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.todos-item-check {
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 10px; 
+}
