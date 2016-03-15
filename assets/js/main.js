@@ -7,9 +7,12 @@ var removeTask = function() {
 };
 
 var addTask = function() {
-    
+    var text = $('.todos-input').val();
+    $('<li class="list-group-item todos-item"><i class="fa fa-check-circle todos-item-check"></i>' + text + '<i class="fa fa-trash-o todos-item-trash"></i></li>').prependTo('.todos-list');
+    $('.todos-input').val('');
 }
 
-$('.todos-item-check').click(toggleComplete);
-$('.todos-item-trash').click(removeTask);
-$('.todos-input').click(addTask);
+$('.todos-list').delegate('.todos-item-check', 'click', toggleComplete);
+$('.todos-list').delegate('.todos-item-trash', 'click', removeTask);
+
+$('.todos-button').click(addTask);
