@@ -3,14 +3,18 @@ var toggleComplete = function() {
 };
 
 var removeTask = function() {
-    $(this).parent().remove();
+    var item = $(this).parent();
+    item.addClass('animated hinge');
+    setTimeout(function() {
+        item.remove();
+    }, 2000);
 };
 
 var addTask = function() {
     var text = $('.todos-input').val();
     $('<li class="list-group-item todos-item"><i class="fa fa-check-circle todos-item-check"></i>' + text + '<i class="fa fa-trash-o todos-item-trash"></i></li>').prependTo('.todos-list');
-    $('.todos-input').val('');
-}
+    $('.todos-input').val('').focus();
+};
 
 $('.todos-list').delegate('.todos-item-check', 'click', toggleComplete);
 $('.todos-list').delegate('.todos-item-trash', 'click', removeTask);

@@ -1,7 +1,12 @@
 .todos-item-trash {
+    opacity: 0.3;
     float: right;
     font-size: 22px;
     cursor: pointer;
+}
+
+.todos-item:hover .todos-item-trash {
+    opacity: 1;
 }
 
 .todos-item-check {
